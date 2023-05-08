@@ -87,13 +87,15 @@ const Gameboard = (() => {
   
     const endGame = (message) => {
       isGameOver = true;
-      alert(message);
+      const winnerDisplay = document.querySelector('.winner-display');
+      winnerDisplay.textContent = message;
+      winnerDisplay.classList.add('show');
     };
   
     const init = () => {
-      const boxes = document.querySelectorAll(".box");
+      const boxes = document.querySelectorAll('.box');
       boxes.forEach((box, index) => {
-        box.addEventListener("click", handleBoxClick);
+        box.addEventListener('click', handleBoxClick);
         box.dataset.index = index;
       });
     };
@@ -102,18 +104,17 @@ const Gameboard = (() => {
       Gameboard.resetBoard();
       isGameOver = false;
       currentPlayer = player1;
-      const boxes = document.querySelectorAll(".box");
+      const boxes = document.querySelectorAll('.box');
       boxes.forEach((box) => {
-        box.textContent = "";
+        box.textContent = '';
       });
+      const winnerDisplay = document.querySelector('.winner-display');
+      winnerDisplay.classList.remove('show');
     };
   
-    const resetButton = document.querySelector(".reset");
-    window.onload = function() {
-        const resetButton = document.querySelector(".reset");
-        resetButton.addEventListener("click", resetGame);
-      };
-        
+    const resetButton = document.querySelector('.reset');
+    resetButton.addEventListener('click', resetGame);
+  
     return { init };
   })();
   
