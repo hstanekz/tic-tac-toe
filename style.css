@@ -20,7 +20,7 @@ header {
     align-content: center;
 }
 
-.gameBoard > * {
+.box {
     border: 2px solid #006a71;
     width: 100px;
     height: 100px;
@@ -47,3 +47,27 @@ header {
 .gameBoard .box:nth-child(7), .gameBoard .box:nth-child(8), .gameBoard .box:nth-child(9) {
     border-bottom: none;
 }
+  
+  .result {
+    margin: 10px auto;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .reset {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .reset:hover {
+    background-color: #3e8e41;
+  }
+  
